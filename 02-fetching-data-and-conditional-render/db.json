@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Angular introduction",
+      "done": false
+    },
+    {
+      "id": 2,
+      "name": "Learn components",
+      "done": true
+    }
+  ]
+}

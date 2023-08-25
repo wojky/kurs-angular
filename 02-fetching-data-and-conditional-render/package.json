@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "api": "json-server db.json"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "@angular/cli": "~16.2.0",
     "@angular/compiler-cli": "^16.2.0",
     "autoprefixer": "^10.4.15",
+    "json-server": "^0.17.3",
     "postcss": "^8.4.28",
     "tailwindcss": "^3.3.3",
     "typescript": "~5.1.3"
