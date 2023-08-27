@@ -80,7 +80,7 @@ Repozytorium: ✅
 
 Opublikowano: ❌
 
-Repozytorium: ❌
+Repozytorium: ✅
 
 #### Czego się nauczysz?
 
