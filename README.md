@@ -54,34 +54,41 @@ Kliknij w nazwę by przejść by zobaczyć zawartość lekcji
 
 #### [Link do lekcji](https://youtu.be/sNnKGrLinIA)
 
-Opublikowano: ✅
+Opublikowano: ✅ (01/09/2023)
 
 Repozytorium: ✅
 
 #### Czego się nauczysz?
 
-- instalacja niezbędnych rozszerzeń VSC
-- konfiguracja Prettier oraz TailwindCSS
-- wstęp do Angular CLI
-- tworzenie nowego projektu opartego o Standalone API
-- budowa aplikacji Angularowej
+- zainstalujesz niezbędne rozszerzenia VSC
+- konfiguracji Prettier oraz TailwindCSS
+- podstawy Angular CLI
+- tworzenia nowego projektu opartego o Standalone API
+- budowania aplikacji Angularowej
 - czym jest komponent w Angularze?
-- wprowadzenie do template syntax (interpolacja, bindowanie właściwosci oraz eventów, zmienne w template, obiekt `$event`)
-- bindowanie konkretnej klasy oraz konkretnego eventu w template
-- importowanie zależności komponentu z Standalone API
-- wykorzystanie dyrektywy NgFor do pracy na kolekcjach danych
-- tworzenie komponentów za pomocą CLI oraz ich użycie
-- przekazywanie danych do komponentu (relacja rodzic -> dziecko) za pomocą `@Input()`
-- przekazywanie danych z komponentu (relacja dziecko -> rodzic) za pomocą `@Output()` czyli tworzenie własnych customowych eventów
+- wprowadzenia do template syntax (interpolacja, bindowanie właściwosci oraz eventów, zmienne w template, obiekt `$event`)
+- bindowania konkretnej klasy CSS oraz konkretnego eventu w template
+- importowania zależności komponentu z Standalone API
+- wykorzystania dyrektywy NgFor do pracy na kolekcjach danych
+- tworzenia komponentów za pomocą CLI oraz ich użycia
+- przekazywania danych do komponentu (relacja rodzic -> dziecko) za pomocą `@Input()`
+- przekazywania danych z komponentu (relacja dziecko -> rodzic) za pomocą `@Output()` czyli tworzenie własnych customowych eventów
 
 ### 2. Praca na danych z serwera, renderowanie warunkowe
 
 #### ~~Link do lekcji~~
 
-Opublikowano: ❌
+Opublikowano: ✅ (01/09/2023)
 
 Repozytorium: ✅
 
 #### Czego się nauczysz?
 
-- TBA
+- jak zbudować mockowy serwer lokalny, by móc pracować z API, za pomocą biblioteki [`json-server`](https://github.com/typicode/json-server)
+- pracy na danych asynchronicznych z Angularem
+- jak obsługiwać różne stany komponentu? (ładowanie danych/błąd/sukces)?
+- jakie są ograniczenia w typowaniu danych przychodzących z API
+- zawężanie typów w TS
+- zawężania typów z `discriminated unions`` pomaga nam uniknąć bugów?
+- wyświetlania warunkowego elementów w oparciu o logikę komponentu
+- wykorzystania `ng-template` z dyrektywą `NgIf`
