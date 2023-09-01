@@ -46,7 +46,7 @@ Kliknij w nazwę by przejść by zobaczyć zawartość lekcji
 | Lp  | Data publikacji | Tytuł                                                                                                                                     | Wersja |
 | --- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | 1   | 25/08/2023      | [Konfiguracja projektu, komponenty, template syntax, Standalone API ](#1-konfiguracja-projektu-komponenty-template-syntax-standalone-api) | v16.2  |
-| 2   | 01/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](2-praca-na-danych-z-serwera-renderowanie-warunkowe)                                   | v16.2  |
+| 2   | 01/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#2-praca-na-danych-z-serwera-renderowanie-warunkowe)                                   | v16.2  |
 
 ## Zawartość lekcji
 
