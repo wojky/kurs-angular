@@ -1,0 +1,16 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Angular introduction",
+      "done": false,
+      "createdAt": 1693042928127
+    },
+    {
+      "id": 2,
+      "name": "Learn components",
+      "done": true,
+      "createdAt": 1693042949144
+    }
+  ]
+}
