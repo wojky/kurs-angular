@@ -1,10 +1,11 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, inject } from "@angular/core";
 import { Task } from "./Task";
 import { NgFor, NgIf } from "@angular/common";
 import { NgIconComponent, provideIcons } from "@ng-icons/core";
 import { featherCalendar } from "@ng-icons/feather-icons";
 import { RemoveItemButtonComponent } from "./remove-item-button.component";
 import { AutosizeTextareaComponent } from "./autosize-textarea.component";
+import { TasksService } from "./tasks.service";
 
 @Component({
   selector: "app-tasks-list",
@@ -27,12 +28,13 @@ import { AutosizeTextareaComponent } from "./autosize-textarea.component";
             (dblclick)="switchToEditMode()"
           >
             <header class="flex justify-end">
-              <app-remove-item-button />
+              <app-remove-item-button (confirm)="delete(task.id)" />
             </header>
             <section class="text-left">
               <app-autosize-textarea
                 *ngIf="editMode; else previewModeTemplate"
                 (keyup.escape)="editMode = false"
+                (submitText)="updateTask(task.id, $event)"
                 [value]="task.name"
               />
 
@@ -59,6 +61,16 @@ export class TasksListComponent {
   editMode = false;
 
   isSingleClick = true;
+
+  private tasksService = inject(TasksService);
+
+  delete(taskId: number) {
+    this.tasksService.delete(taskId);
+  }
+
+  updateTask(taskId: number, updatedName: string) {
+    this.tasksService.update(taskId, updatedName);
+  }
 
   handleSingleClick(task: Task) {
     this.isSingleClick = true;
