@@ -46,7 +46,10 @@ Kliknij w nazwę by przejść by zobaczyć zawartość lekcji
 | Lp  | Data publikacji | Tytuł                                                                                                                                     | Wersja |
 | --- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | 1   | 25/08/2023      | [Konfiguracja projektu, komponenty, template syntax, Standalone API ](#1-konfiguracja-projektu-komponenty-template-syntax-standalone-api) | v16.2  |
-| 2   | 01/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#2-praca-na-danych-z-serwera-renderowanie-warunkowe)                                   | v16.2  |
+| 2   | 01/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#2-praca-na-danych-z-serwera-renderowanie-warunkowe)                                  | v16.2  |
+| 3   | 16/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#3-pełny-crud-wydzielanie-odpowiedzialności-serwisy-w-angularze)                      | v16.2  |
+
+| 4 | _24/09/2023_ | [_Praca na danych z serwera, renderowanie warunkowe_](#4-pełny-crud-wydzielanie-odpowiedzialności-serwisy-w-angularze) | v16.2 |
 
 ## Zawartość lekcji
 
@@ -92,3 +95,32 @@ Repozytorium: ✅
 - zawężania typów z `discriminated unions`` pomaga nam uniknąć bugów?
 - wyświetlania warunkowego elementów w oparciu o logikę komponentu
 - wykorzystania `ng-template` z dyrektywą `NgIf`
+
+### 3. Pełny CRUD, wydzielanie odpowiedzialności, serwisy w Angularze
+
+#### [Link do lekcji](https://youtu.be/BDjDGdghC2I)
+
+Opublikowano: ✅ (16/09/2023)
+
+Repozytorium: ✅
+
+#### Czego się nauczysz?
+
+- "odchudzania" komponentów czyli wydzielaniu odpowiedzialności do dedykowanych funkcji/klas
+- dlaczego warto używać metody cyklu zycia `ngOnInit` zamiast konstruktora?
+- wykorzystania typów generycznych
+- jaka idea stoi za serwisami?
+- dekoratora `@Injectable`
+- wstrzykiwania zależności Angularowych za pomocą konstruktora oraz metody `inject`
+
+### 4. Struktura plików w projekcie, naprawa bugów, komponentyzacja widoków
+
+#### ~~Link do lekcji~~
+
+Opublikowano: ❌ (24/09/2023)
+
+Repozytorium: ❌
+
+#### Czego się nauczysz?
+
+- TBA
