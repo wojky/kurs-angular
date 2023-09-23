@@ -2,8 +2,8 @@
   "tasks": [
     {
       "id": 1,
-      "name": "Angular introduction",
-      "done": false,
+      "name": "Angular v16 !!!",
+      "done": true,
       "createdAt": 1693042928127
     },
     {
@@ -11,6 +11,12 @@
       "name": "Learn components and more stuff",
       "done": true,
       "createdAt": 1693042949144
+    },
+    {
+      "createdAt": 1695467694663,
+      "name": "Learn pipes",
+      "done": false,
+      "id": 3
     }
   ]
 }

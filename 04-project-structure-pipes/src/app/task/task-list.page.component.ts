@@ -1,10 +1,10 @@
 import { Component, inject } from "@angular/core";
-import { TasksListComponent } from "./tasks-list.component";
-import { SubmitTextComponent } from "./submit-text.component";
-import { Task } from "./Task";
+import { TasksListComponent } from "./ui/tasks-list.component";
+import { Task } from "./model/Task";
 import { NgIf } from "@angular/common";
-import { tasksService, TasksService } from "./tasks.service";
-import { ComponentListState } from "./list-state.type";
+import { TasksService } from "./data-access/tasks.service";
+import { ComponentListState } from "../utils/list-state.type";
+import { SubmitTextComponent } from "@ui/submit-text.component";
 
 @Component({
   selector: "app-task-list-page",
