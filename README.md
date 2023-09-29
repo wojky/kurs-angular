@@ -48,8 +48,7 @@ Kliknij w nazwę by przejść by zobaczyć zawartość lekcji
 | 1   | 25/08/2023      | [Konfiguracja projektu, komponenty, template syntax, Standalone API ](#1-konfiguracja-projektu-komponenty-template-syntax-standalone-api) | v16.2  |
 | 2   | 01/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#2-praca-na-danych-z-serwera-renderowanie-warunkowe)                                  | v16.2  |
 | 3   | 16/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#3-pełny-crud-wydzielanie-odpowiedzialności-serwisy-w-angularze)                      | v16.2  |
-
-| 4 | _24/09/2023_ | [_Praca na danych z serwera, renderowanie warunkowe_](#4-pełny-crud-wydzielanie-odpowiedzialności-serwisy-w-angularze) | v16.2 |
+| 4   | 30/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#4-pełny-crud-wydzielanie-odpowiedzialności-serwisy-w-angularze)                      | v16.2  |
 
 ## Zawartość lekcji
 
@@ -113,13 +112,29 @@ Repozytorium: ✅
 - dekoratora `@Injectable`
 - wstrzykiwania zależności Angularowych za pomocą konstruktora oraz metody `inject`
 
-### 4. Struktura plików w projekcie, naprawa bugów, komponentyzacja widoków
+### 4. Struktura plików w projekcie oraz custom paths w TypeScript
+
+#### [Link do lekcji](https://www.youtube.com/watch?v=AyWOMp-xlkk)
+
+Opublikowano: ✅ (30/09/2023)
+
+Repozytorium: ✅
+
+#### Nauczysz się:
+
+- dlaczego warto dbać o strukturę plików i katalogów w projekcie
+- jak nazewnictwo plików pomaga nam w nawigacji po projekcie
+- w jaki sposób IDE pomaga nam ogarnąć refaktor katalogów
+- dostrzegać różnicę między plikami domenowymi, a plikami bezkontekstowymi
+- budować własne ścieżki dostępu do plików dzięki `TypeScript paths`
+
+### 5. Naprawiamy bugi, wyciąganie komponentów oraz idea pipe'ów
 
 #### ~~Link do lekcji~~
 
-Opublikowano: ❌ (24/09/2023)
+Opublikowano: ❌ (06/10/2023)
 
-Repozytorium: ❌
+Repozytorium: ✅
 
 #### Czego się nauczysz?
 
