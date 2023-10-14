@@ -47,8 +47,10 @@ Kliknij w nazwę by przejść by zobaczyć zawartość lekcji
 | --- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | 1   | 25/08/2023      | [Konfiguracja projektu, komponenty, template syntax, Standalone API ](#1-konfiguracja-projektu-komponenty-template-syntax-standalone-api) | v16.2  |
 | 2   | 01/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#2-praca-na-danych-z-serwera-renderowanie-warunkowe)                                  | v16.2  |
-| 3   | 16/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#3-pełny-crud-wydzielanie-odpowiedzialności-serwisy-w-angularze)                      | v16.2  |
-| 4   | 30/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#4-pełny-crud-wydzielanie-odpowiedzialności-serwisy-w-angularze)                      | v16.2  |
+| 3   | 16/09/2023      | [Pełny CRUD, wydzielanie odpowiedzialności, serwisy w Angularze](#3-pełny-crud-wydzielanie-odpowiedzialności-serwisy-w-angularze)         | v16.2  |
+| 4   | 30/09/2023      | [Struktura plików w projekcie oraz custom paths w TypeScript](#4-struktura-plików-w-projekcie-oraz-custom-paths-w-typescript)             | v16.2  |
+| 5   | 14/10/2023      | [Naprawiamy bugi i wyciąganie komponentu zadania](#5-naprawiamy-bugi-wyciąganie-komponentów-oraz-idea-pipeów)                             | v16.2  |
+| 6   | 19/10/2023      | [Angular Pipes](#6-angular-pipes)                                                                                                         | v16.2  |
 
 ## Zawartość lekcji
 
@@ -128,14 +130,32 @@ Repozytorium: ✅
 - dostrzegać różnicę między plikami domenowymi, a plikami bezkontekstowymi
 - budować własne ścieżki dostępu do plików dzięki `TypeScript paths`
 
-### 5. Naprawiamy bugi, wyciąganie komponentów oraz idea pipe'ów
+### 5. Naprawiamy bugi oraz wyciągamy komponent elementu listy
 
-#### ~~Link do lekcji~~
+#### [Link do lekcji](https://www.youtube.com/watch?v=eLE4Fiylx9M)
 
-Opublikowano: ❌ (06/10/2023)
+Opublikowano: ✅ (14/10/2023)
 
 Repozytorium: ✅
 
-#### Czego się nauczysz?
+#### Nauczysz się:
 
-- TBA
+- naprawiać bugi w kodzie
+- wyciągać komponenty z istniejącego kodu
+- myśleć jak programita podczas tworzenia nowych funkcjonalności
+- wydzielać odpowiedzialności dla poszczególnych komponentów
+
+### 6. Angular Pipes
+
+#### [Link do lekcji](https://www.youtube.com/watch?v=-PKlnEknyGE)
+
+Opublikowano: ✅ (19/10/2023)
+
+Repozytorium: ✅
+
+#### Nauczysz się:
+
+- jaki jest problem z wywoływaniem metod w templatkach
+- czym są Angularowe rury czyli pipe
+- jak rozwiązać problem nadrmienych wywołań za pomocą memoizacji w pipe
+- przeglądarkowego API `Intl` do zarządzania datami w przyjemniejszy sposób
