@@ -6,8 +6,6 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class CustomDatePipe implements PipeTransform {
   transform(value: number) {
-    console.log(value);
-
     return new Intl.DateTimeFormat("pl").format(value);
   }
 }
