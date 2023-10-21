@@ -47,7 +47,24 @@ import { SORT_BY, SortBy } from "../shared/enums/sort-by.enum";
 
     <details open>
       <summary class="marker:content-none">Filters</summary>
-      Tutaj wjadą filtry na grubo
+      <div class="mb-2 flex justify-between">
+        <fieldset class="flex flex-col">
+          <label for="filter-search-term">Search</label>
+          <input
+            id="filter-search-term"
+            class="border-b border-b-orange-400 outline-none"
+          />
+        </fieldset>
+
+        <fieldset class="flex flex-col">
+          <label for="filter-status">Status</label>
+          <select id="filter-status" class="border border-orange-400 outline-none">
+            <option>-</option>
+            <option>Done</option>
+            <option>Todo</option>
+          </select>
+        </fieldset>
+      </div>
     </details>
     <div class="flex gap-12">
       <button
