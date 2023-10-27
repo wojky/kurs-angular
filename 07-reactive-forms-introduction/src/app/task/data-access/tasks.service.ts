@@ -5,16 +5,27 @@ import { wait } from "../../utils/wait";
 
 export type TaskUpdatePayload = { done?: boolean; name?: string };
 
+export type GetAllTasksSearchParams = {
+  q: string;
+  _sort: "createdAt";
+  _order: "desc" | "asc";
+  done_like: "true" | "false" | "";
+};
+
 @Injectable({
   providedIn: "root",
 })
 export class TasksService {
   private URL = "http://localhost:3000";
 
-  async getAll() {
+  async getAll(searchParams: GetAllTasksSearchParams) {
     await wait();
 
-    return fetch(`${this.URL}/tasks`).then<Task[] | ListFetchingError>((response) => {
+    const url = new URL("/tasks", this.URL);
+
+    url.search = new URLSearchParams(searchParams).toString();
+
+    return fetch(url).then<Task[] | ListFetchingError>((response) => {
       if (response.ok) {
         return response.json();
       }
