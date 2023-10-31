@@ -9,6 +9,7 @@ import {
   TasksListFiltersComponent,
   TasksListFiltersFormValue,
 } from "./ui/task-list-filters.component";
+import { getAllTasksSearchParams } from "./data-access/tasks-filters.adapter";
 
 @Component({
   selector: "app-task-list-page",
@@ -50,7 +51,6 @@ export class TaskListPageComponent {
     this.listState = { state: LIST_STATE_VALUE.LOADING };
 
     this.tasksService.getAll(searchParams).then((response) => {
-      console.log({ response });
       if (Array.isArray(response)) {
         this.listState = {
           state: LIST_STATE_VALUE.SUCCESS,
@@ -77,11 +77,4 @@ export class TaskListPageComponent {
       }
     });
   }
-}
-function getAllTasksSearchParams(filters: {
-  searchTerm: string;
-  status: "ALL" | "TODO" | "DONE";
-  sortBy: "ASC" | "DESC";
-}): GetAllTasksSearchParams {
-  throw new Error("Function not implemented.");
 }
