@@ -47,9 +47,11 @@ Kliknij w nazwę by przejść by zobaczyć zawartość lekcji
 | --- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | 1   | 25/08/2023      | [Konfiguracja projektu, komponenty, template syntax, Standalone API ](#1-konfiguracja-projektu-komponenty-template-syntax-standalone-api) | v16.2  |
 | 2   | 01/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#2-praca-na-danych-z-serwera-renderowanie-warunkowe)                                  | v16.2  |
-| 3   | 16/09/2023      | [Praca na danych z serwera, renderowanie warunkowe](#3-pełny-crud-wydzielanie-odpowiedzialności-serwisy-w-angularze)                      | v16.2  |
-
-| 4 | _24/09/2023_ | [_Praca na danych z serwera, renderowanie warunkowe_](#4-pełny-crud-wydzielanie-odpowiedzialności-serwisy-w-angularze) | v16.2 |
+| 3   | 16/09/2023      | [Pełny CRUD, wydzielanie odpowiedzialności, serwisy w Angularze](#3-pełny-crud-wydzielanie-odpowiedzialności-serwisy-w-angularze)         | v16.2  |
+| 4   | 30/09/2023      | [Struktura plików w projekcie oraz custom paths w TypeScript](#4-struktura-plików-w-projekcie-oraz-custom-paths-w-typescript)             | v16.2  |
+| 5   | 14/10/2023      | [Naprawiamy bugi i wyciąganie komponentu zadania](#5-naprawiamy-bugi-wyciąganie-komponentów-oraz-idea-pipeów)                             | v16.2  |
+| 6   | 19/10/2023      | [Angular Pipes](#6-angular-pipes)                                                                                                         | v16.2  |
+| 7   | 27/10/2023      | [Budujemy filtry z pomocą Reactive Forms!](#7-budujemy-filtry-z-pomocą-reactive-forms)                                                    | v16.2  |
 
 ## Zawartość lekcji
 
@@ -113,14 +115,73 @@ Repozytorium: ✅
 - dekoratora `@Injectable`
 - wstrzykiwania zależności Angularowych za pomocą konstruktora oraz metody `inject`
 
-### 4. Struktura plików w projekcie, naprawa bugów, komponentyzacja widoków
+### 4. Struktura plików w projekcie oraz custom paths w TypeScript
 
-#### ~~Link do lekcji~~
+#### [Link do lekcji](https://www.youtube.com/watch?v=AyWOMp-xlkk)
 
-Opublikowano: ❌ (24/09/2023)
+Opublikowano: ✅ (30/09/2023)
 
-Repozytorium: ❌
+Repozytorium: ✅
 
-#### Czego się nauczysz?
+#### Nauczysz się:
 
-- TBA
+- dlaczego warto dbać o strukturę plików i katalogów w projekcie
+- jak nazewnictwo plików pomaga nam w nawigacji po projekcie
+- w jaki sposób IDE pomaga nam ogarnąć refaktor katalogów
+- dostrzegać różnicę między plikami domenowymi, a plikami bezkontekstowymi
+- budować własne ścieżki dostępu do plików dzięki `TypeScript paths`
+
+### 5. Naprawiamy bugi oraz wyciągamy komponent elementu listy
+
+#### [Link do lekcji](https://www.youtube.com/watch?v=eLE4Fiylx9M)
+
+Opublikowano: ✅ (14/10/2023)
+
+Repozytorium: ✅
+
+#### Nauczysz się:
+
+- naprawiać bugi w kodzie
+- wyciągać komponenty z istniejącego kodu
+- myśleć jak programita podczas tworzenia nowych funkcjonalności
+- wydzielać odpowiedzialności dla poszczególnych komponentów
+
+### 6. Angular Pipes
+
+#### [Link do lekcji](https://www.youtube.com/watch?v=-PKlnEknyGE)
+
+Opublikowano: ✅ (19/10/2023)
+
+Repozytorium: ✅
+
+#### Nauczysz się:
+
+- jaki jest problem z wywoływaniem metod w templatkach
+- czym są Angularowe rury czyli pipe
+- jak rozwiązać problem nadrmienych wywołań za pomocą memoizacji w pipe
+- przeglądarkowego API `Intl` do zarządzania datami w przyjemniejszy sposób
+
+### 7. Budujemy filtry z pomocą Reactive Forms!
+
+#### [Link do lekcji](https://youtu.be/UrqeKoRAkQw)
+
+Opublikowano: ✅ (27/10/2023)
+
+Repozytorium: ✅
+
+#### Nauczysz się:
+
+- jak korzystać z obiektów `URL` oraz `URLSearchParams`, by budować odporne na bugi urle
+- jak wykorzystać `lookup types` by tworzyć utrzymywalne i bardziej elastyczne typy w TypeScript
+- tworzyć funckcje-adaptery, by "pogodzić" różne kontrakty między formularzem a API
+- jak zbudować prosty formularz za pomocą Reactive Forms
+- jak stworzyć typ formularza
+- jak podłączyć Reactive Forms pod widok
+- jak ręcznie zaktualizować wartość formularza
+- subskrybować się na zmiany formularza by reagować na ich aktualizacje
+
+#### Zadania do wykonania
+
+- dodaj filtr za pomocą `input type="date"`, który pozwoli nam na odfiltrowanie zadań nie starszych niż wskazana data
+- stwórz enuma dla stanu listy zadań, byśmy nie używali magic stringów. Podobnie jak w przypadku statusów zadań w filtrach
+- wyciągnij cały formularz do oddzielnego komponentu, gdzie na każdą zmianę filtrów będziemy mieć wystawiony event
