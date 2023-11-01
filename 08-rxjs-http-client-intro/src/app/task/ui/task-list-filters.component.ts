@@ -105,7 +105,7 @@ export class TasksListFiltersComponent {
 
   form: TasksListFiltersForm = this.formBuilder.group({
     searchTerm: this.formBuilder.control<string>(""),
-    sortBy: this.formBuilder.control<SortBy>(SORT_BY.ASC),
+    sortBy: this.formBuilder.control<SortBy>(SORT_BY.DESC),
     status: this.formBuilder.control<TaskStatus>(TASK_STATUS.ALL),
   });
 
@@ -119,7 +119,7 @@ export class TasksListFiltersComponent {
   }
 
   ngOnInit() {
-    this.form.valueChanges.subscribe(() => {
+    this.form.valueChanges.pipe().subscribe(() => {
       this.filtersChange.emit(this.form.getRawValue());
     });
   }

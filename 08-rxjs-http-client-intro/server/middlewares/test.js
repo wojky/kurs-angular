@@ -8,5 +8,9 @@ module.exports = (req, res, next) => {
     req.body.updatedAt = Date.now();
   }
 
+  if (req.url === "/tasks" && req.method === "POST") {
+    req.body.done = false;
+  }
+
   next();
 };

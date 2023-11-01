@@ -72,7 +72,6 @@ export class TasksService {
       },
       body: JSON.stringify({
         name,
-        done: false,
       } as Task),
     }).then<Task | Error>((response) => {
       if (response.ok) {
