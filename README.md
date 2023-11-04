@@ -35,9 +35,9 @@ Na dzień dobry starczy tych informacji, jak widzisz jest ambitnie, a tymczasem 
 
 Aplikacje do zarządzania projektami (to nie jest kolejna todolista). Będą kreatory zadań, zespołów, tablice kanbanowe i wiele więcej funkcjonalności. Większość z nich schowamy dla zautoryzowanych użytkowników, ale kilku damy publiczny dostęp. Naturalnie będziemy pracować na danych pochodzących z serwera. Także pracy jest dużo!
 
-#### Lista technologii oraz narzędzi (_na dzień 25/08/2023_)
+#### Lista technologii oraz narzędzi (_na dzień 04/11/2023_)
 
-Angular, TypeScript, TailwindCSS, Rest Api, Prettier
+Angular, TypeScript, RxJS TailwindCSS, Rest Api, Prettier
 
 ## Lista lekcji:
 
@@ -52,6 +52,7 @@ Kliknij w nazwę by przejść by zobaczyć zawartość lekcji
 | 5   | 14/10/2023      | [Naprawiamy bugi i wyciąganie komponentu zadania](#5-naprawiamy-bugi-wyciąganie-komponentów-oraz-idea-pipeów)                             | v16.2  |
 | 6   | 19/10/2023      | [Angular Pipes](#6-angular-pipes)                                                                                                         | v16.2  |
 | 7   | 27/10/2023      | [Budujemy filtry z pomocą Reactive Forms!](#7-budujemy-filtry-z-pomocą-reactive-forms)                                                    | v16.2  |
+| 8   | 04/11/2023      | [Poznajemy RxJS](#8-poznajemy-rxjs)                                                                                                       | v16.2  |
 
 ## Zawartość lekcji
 
@@ -185,3 +186,23 @@ Repozytorium: ✅
 - dodaj filtr za pomocą `input type="date"`, który pozwoli nam na odfiltrowanie zadań nie starszych niż wskazana data
 - stwórz enuma dla stanu listy zadań, byśmy nie używali magic stringów. Podobnie jak w przypadku statusów zadań w filtrach
 - wyciągnij cały formularz do oddzielnego komponentu, gdzie na każdą zmianę filtrów będziemy mieć wystawiony event
+
+### 8. Poznajemy RxJS
+
+#### [Link do lekcji](https://youtu.be/r_af8YLPWUc)
+
+Opublikowano: ✅ (04/11/2023)
+
+Repozytorium: ✅
+
+#### Nauczysz się:
+
+- jak w praktyce wykorzystać programowania reaktywne z RxJS
+- czym są operatory RxJS
+- jak zarządzać subskrypcjami na strumienie danych
+- jak wykorzystać metodę ngOnDestroy
+- operatorów RxJS'a: startWith, debounceTime
+
+#### Zadania do wykonania
+
+-
