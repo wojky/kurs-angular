@@ -1,7 +1,8 @@
-import { Injectable } from "@angular/core";
+import { Injectable, inject } from "@angular/core";
 import { Task } from "../model/Task";
 import { ListFetchingError } from "../../utils/list-state.type";
 import { wait } from "../../utils/wait";
+import { HttpClient } from "@angular/common/http";
 
 export type TaskUpdatePayload = { done?: boolean; name?: string };
 
@@ -18,20 +19,16 @@ export type GetAllTasksSearchParams = {
 export class TasksService {
   private URL = "http://localhost:3000";
 
-  async getAll(searchParams: GetAllTasksSearchParams) {
-    await wait();
+  private http = inject(HttpClient);
 
+  constructor() {}
+
+  getAll(searchParams: GetAllTasksSearchParams) {
     const url = new URL("/tasks", this.URL);
 
     url.search = new URLSearchParams(searchParams).toString();
 
-    return fetch(url).then<Task[] | ListFetchingError>((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-
-      return { status: response.status, message: response.statusText };
-    });
+    return this.http.get<Task[]>(url.href);
   }
 
   async delete(taskId: number) {
@@ -46,20 +43,8 @@ export class TasksService {
     });
   }
 
-  async update(taskId: number, payload: TaskUpdatePayload) {
-    return fetch(`${this.URL}/tasks/${taskId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    }).then<Task | Error>((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-
-      return new Error("Cant update task");
-    });
+  update(taskId: number, payload: TaskUpdatePayload) {
+    return this.http.patch<Task>(`${this.URL}/tasks/${taskId}`, payload);
   }
 
   async add(name: string) {

@@ -49,10 +49,8 @@ export class TasksListComponent {
   }
 
   updateTask(taskId: number, updatedTask: TaskUpdatePayload) {
-    this.tasksService.update(taskId, updatedTask).then((res) => {
-      if (res instanceof Error) {
-        alert(res.message);
-      } else {
+    this.tasksService.update(taskId, updatedTask).subscribe({
+      next: (res) => {
         this.tasks = this.tasks.map((task) => {
           if (task.id === res.id) {
             return res;
@@ -60,7 +58,10 @@ export class TasksListComponent {
             return task;
           }
         });
-      }
+      },
+      error: (res) => {
+        alert(res.message);
+      },
     });
   }
 }

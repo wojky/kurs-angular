@@ -50,18 +50,19 @@ export class TaskListPageComponent {
   getAllTasks(searchParams: GetAllTasksSearchParams): void {
     this.listState = { state: LIST_STATE_VALUE.LOADING };
 
-    this.tasksService.getAll(searchParams).then((response) => {
-      if (Array.isArray(response)) {
+    this.tasksService.getAll(searchParams).subscribe({
+      next: (results) => {
         this.listState = {
           state: LIST_STATE_VALUE.SUCCESS,
-          results: response,
+          results: results,
         };
-      } else {
+      },
+      error: (err) => {
         this.listState = {
           state: LIST_STATE_VALUE.ERROR,
-          error: response,
+          error: err,
         };
-      }
+      },
     });
   }
 
