@@ -28,6 +28,13 @@ export class TasksService {
     });
   }
 
+  getAllByProjectId(projectId: string, searchParams: GetAllTasksSearchParams) {
+    return this.http.get<Task[]>(`${this.URL}/tasks`, {
+      observe: "response",
+      params: { ...searchParams, projectId },
+    });
+  }
+
   delete(taskId: number) {
     return this.http.delete(`${this.URL}/tasks/${taskId}`);
   }

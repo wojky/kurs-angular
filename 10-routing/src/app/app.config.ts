@@ -13,16 +13,18 @@ const routes: Routes = [
   {
     path: "projects",
     component: ProjectListPageComponent,
+    title: "Projekty",
   },
   {
     path: "tasks",
+    title: "Zadania",
     children: [
       {
         path: "",
         component: TaskListPageComponent,
       },
       {
-        path: ":id",
+        path: ":projectId",
         component: TaskListPageComponent,
       },
     ],

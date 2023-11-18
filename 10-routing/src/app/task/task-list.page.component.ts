@@ -34,7 +34,7 @@ import { getAllTasksSearchParams } from "./data-access/tasks-filters.adapter";
   `,
 })
 export class TaskListPageComponent {
-  @Input() id?: string;
+  @Input() projectId?: string;
 
   private tasksService = inject(TasksService);
 
@@ -52,7 +52,11 @@ export class TaskListPageComponent {
   getAllTasks(searchParams: GetAllTasksSearchParams): void {
     this.listState = { state: LIST_STATE_VALUE.LOADING };
 
-    this.tasksService.getAll(searchParams).subscribe({
+    const source$ = this.projectId
+      ? this.tasksService.getAllByProjectId(this.projectId, searchParams)
+      : this.tasksService.getAll(searchParams);
+
+    source$.subscribe({
       next: (response) => {
         console.log(response.headers.get("Content-Length"));
 

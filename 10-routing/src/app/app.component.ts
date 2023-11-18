@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { TaskListPageComponent } from "./task/task-list.page.component";
 import { ProjectListPageComponent } from "./project/project-list.page.component";
-import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
+import { RouterLink, RouterLinkActive, RouterOutlet, Router } from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -36,4 +36,10 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
     </main>
   `,
 })
-export class AppComponent {}
+export class AppComponent {
+  private router = inject(Router);
+
+  constructor() {
+    this.router.navigateByUrl;
+  }
+}
