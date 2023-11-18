@@ -51,10 +51,12 @@ export class TaskListPageComponent {
     this.listState = { state: LIST_STATE_VALUE.LOADING };
 
     this.tasksService.getAll(searchParams).subscribe({
-      next: (results) => {
+      next: (response) => {
+        console.log(response.headers.get("Content-Length"));
+
         this.listState = {
           state: LIST_STATE_VALUE.SUCCESS,
-          results: results,
+          results: response.body!,
         };
       },
       error: (err) => {
