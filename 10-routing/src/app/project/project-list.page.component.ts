@@ -10,7 +10,7 @@ import { ProjectsApiService } from "./data-access/projects.api.service";
   standalone: true,
   imports: [SubmitTextComponent, NgIf, NgFor],
   template: `
-    <p>Projekty:</p>
+    <p>Projects:</p>
     <app-submit-text
       (submitText)="
         listState.state === listStateValue.SUCCESS &&

@@ -6,12 +6,25 @@ import { ProjectListPageComponent } from "./project/project-list.page.component"
   selector: "app-root",
   standalone: true,
   imports: [TaskListPageComponent, ProjectListPageComponent],
-
+  styles: [
+    `
+      main,
+      nav {
+        @apply px-12;
+      }
+    `,
+  ],
   template: `
     <h1 class="text-orange-500 uppercase py-4 text-2xl text-center">
       Another boring todolist
     </h1>
-    <main class="grid pt-4 px-12">
+    <!-- <nav class="bg-orange-300">
+      <ul class="flex gap-6">
+        <li><a>Tasks</a></li>
+        <li><a>Projects</a></li>
+      </ul>
+    </nav> -->
+    <main class="grid pt-4">
       <app-project-list-page />
       <hr class="my-6" />
       <app-task-list-page />
