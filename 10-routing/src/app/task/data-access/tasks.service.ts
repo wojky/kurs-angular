@@ -28,39 +28,15 @@ export class TasksService {
     });
   }
 
-  async delete(taskId: number) {
-    return fetch(`${this.URL}/tasks/${taskId}`, {
-      method: "DELETE",
-    }).then<Error | undefined>((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-
-      return new Error("Cant delete task");
-    });
+  delete(taskId: number) {
+    return this.http.delete(`${this.URL}/tasks/${taskId}`);
   }
 
   update(taskId: number, payload: TaskUpdatePayload) {
     return this.http.patch<Task>(`${this.URL}/tasks/${taskId}`, payload);
   }
 
-  async add(name: string) {
-    await wait();
-
-    return fetch(`${this.URL}/tasks`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-      } as Task),
-    }).then<Task | Error>((response) => {
-      if (response.ok) {
-        return response.json();
-      }
-
-      return new Error("Cant add task");
-    });
+  add(name: string) {
+    return this.http.post<Task>(`${this.URL}/tasks`, { name });
   }
 }

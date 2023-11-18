@@ -39,12 +39,13 @@ export class TasksListComponent {
   private tasksService = inject(TasksService);
 
   delete(taskId: number) {
-    this.tasksService.delete(taskId).then((res) => {
-      if (res instanceof Error) {
-        alert(res.message);
-      } else {
+    this.tasksService.delete(taskId).subscribe({
+      next: () => {
         this.tasks = this.tasks.filter((task) => task.id !== taskId);
-      }
+      },
+      error: (res) => {
+        alert(res.message);
+      },
     });
   }
 

@@ -1,4 +1,5 @@
 module.exports = (req, res, next) => {
+  console.log(req.method, req.url);
   if (req.method === "POST") {
     req.body.createdAt = Date.now();
     req.body.updatedAt = null;
