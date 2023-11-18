@@ -10,6 +10,7 @@ module.exports = (req, res, next) => {
 
   if (req.url === "/tasks" && req.method === "POST") {
     req.body.done = false;
+    req.body.projectId = null;
   }
 
   next();
