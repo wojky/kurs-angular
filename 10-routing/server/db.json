@@ -1,7 +1,22 @@
 {
+  "projects": [
+    {
+      "name": "Daily routines",
+      "createdAt": 1700290861039,
+      "updatedAt": null,
+      "id": 1
+    },
+    {
+      "name": "Programming",
+      "createdAt": 1700291084476,
+      "updatedAt": null,
+      "id": 2
+    }
+  ],
   "tasks": [
     {
       "id": 1,
+      "projectId": 2,
       "name": "Angular v16 !!!",
       "done": false,
       "createdAt": 1693042928127,
@@ -9,6 +24,7 @@
     },
     {
       "id": 2,
+      "projectId": 2,
       "name": "Learn components and more stuff",
       "done": false,
       "createdAt": 1693042949144,
@@ -16,6 +32,7 @@
     },
     {
       "createdAt": 1695467694663,
+      "projectId": 2,
       "name": "Learn pipes",
       "done": true,
       "id": 3,
@@ -23,6 +40,7 @@
     },
     {
       "name": "Learn forms",
+      "projectId": 2,
       "done": false,
       "createdAt": 1697281707175,
       "id": 4,
@@ -30,6 +48,7 @@
     },
     {
       "name": "Feed your dog",
+      "projectId": 1,
       "done": false,
       "createdAt": 1697281836095,
       "updatedAt": 1697740424146,
@@ -37,17 +56,11 @@
     },
     {
       "name": "Plank for 2 minutes 💪",
+      "projectId": 1,
       "done": true,
       "createdAt": 1697886596823,
       "updatedAt": 1698775117093,
       "id": 6
-    },
-    {
-      "name": "Record lesson 07",
-      "createdAt": 1698839667491,
-      "updatedAt": null,
-      "done": false,
-      "id": 7
     }
   ]
 }
