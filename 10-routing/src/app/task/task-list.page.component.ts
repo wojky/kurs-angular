@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, Input, inject } from "@angular/core";
 import { TasksListComponent } from "./ui/tasks-list.component";
 import { Task } from "./model/Task";
 import { NgIf } from "@angular/common";
@@ -34,6 +34,8 @@ import { getAllTasksSearchParams } from "./data-access/tasks-filters.adapter";
   `,
 })
 export class TaskListPageComponent {
+  @Input() id?: string;
+
   private tasksService = inject(TasksService);
 
   listState: ComponentListState<Task> = { state: LIST_STATE_VALUE.IDLE };

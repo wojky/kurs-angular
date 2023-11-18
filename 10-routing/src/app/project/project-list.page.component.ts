@@ -4,11 +4,12 @@ import { NgFor, NgIf } from "@angular/common";
 import { ComponentListState, LIST_STATE_VALUE } from "../utils/list-state.type";
 import { SubmitTextComponent } from "@ui/submit-text.component";
 import { ProjectsApiService } from "./data-access/projects.api.service";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: "app-project-list-page",
   standalone: true,
-  imports: [SubmitTextComponent, NgIf, NgFor],
+  imports: [SubmitTextComponent, NgIf, NgFor, RouterLink],
   template: `
     <p>Projects:</p>
     <app-submit-text
@@ -22,7 +23,9 @@ import { ProjectsApiService } from "./data-access/projects.api.service";
       class="list-decimal list-inside"
       *ngIf="listState.state === listStateValue.SUCCESS"
     >
-      <li *ngFor="let project of listState.results">{{ project.name }}</li>
+      <li *ngFor="let project of listState.results">
+        <a [routerLink]="['/tasks', project.id]">{{ project.name }}</a>
+      </li>
     </ol>
 
     <p *ngIf="listState.state === listStateValue.ERROR">
