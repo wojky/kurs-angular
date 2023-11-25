@@ -58,8 +58,6 @@ export class TaskListPageComponent {
 
     source$.subscribe({
       next: (response) => {
-        console.log(response.headers.get("Content-Length"));
-
         this.listState = {
           state: LIST_STATE_VALUE.SUCCESS,
           results: response.body!,
