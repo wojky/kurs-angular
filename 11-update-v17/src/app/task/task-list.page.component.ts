@@ -1,7 +1,6 @@
 import { Component, Input, inject } from "@angular/core";
 import { TasksListComponent } from "./ui/tasks-list.component";
 import { Task } from "./model/Task";
-import { NgIf } from "@angular/common";
 import { GetAllTasksSearchParams, TasksService } from "./data-access/tasks.service";
 import { ComponentListState, LIST_STATE_VALUE } from "../utils/list-state.type";
 import { SubmitTextComponent } from "@ui/submit-text.component";
@@ -14,7 +13,7 @@ import { getAllTasksSearchParams } from "./data-access/tasks-filters.adapter";
 @Component({
   selector: "app-task-list-page",
   standalone: true,
-  imports: [TasksListComponent, SubmitTextComponent, NgIf, TasksListFiltersComponent],
+  imports: [TasksListComponent, SubmitTextComponent, TasksListFiltersComponent],
   template: `
     <app-submit-text
       (submitText)="
@@ -22,15 +21,20 @@ import { getAllTasksSearchParams } from "./data-access/tasks-filters.adapter";
       "
     />
     <app-tasks-list-filters (filtersChange)="handleFiltersChange($event)" />
-    <app-tasks-list
-      *ngIf="listState.state === listStateValue.SUCCESS"
-      class="block mt-4"
-      [tasks]="listState.results"
-    />
-    <p *ngIf="listState.state === listStateValue.ERROR">
-      {{ listState.error.message }}
-    </p>
-    <p *ngIf="listState.state === listStateValue.LOADING">Loading...</p>
+
+    @switch (listState.state) {
+      @case (listStateValue.SUCCESS) {
+        <app-tasks-list class="block mt-4" [tasks]="listState.results" />
+      }
+      @case (listStateValue.ERROR) {
+        <p>
+          {{ listState.error.message }}
+        </p>
+      }
+      @case (listStateValue.LOADING) {
+        <p>Loading...</p>
+      }
+    }
   `,
 })
 export class TaskListPageComponent {
