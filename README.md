@@ -1,4 +1,4 @@
-# Kurs Angular (v16, 2023)
+# Kurs Angular (v16-17, 2023)
 
 autor: [Kamil Wojkowski](https://www.linkedin.com/in/kwojkowski/)
 
@@ -35,9 +35,9 @@ Na dzień dobry starczy tych informacji, jak widzisz jest ambitnie, a tymczasem 
 
 Aplikacje do zarządzania projektami (to nie jest kolejna todolista). Będą kreatory zadań, zespołów, tablice kanbanowe i wiele więcej funkcjonalności. Większość z nich schowamy dla zautoryzowanych użytkowników, ale kilku damy publiczny dostęp. Naturalnie będziemy pracować na danych pochodzących z serwera. Także pracy jest dużo!
 
-#### Lista technologii oraz narzędzi (_na dzień 04/11/2023_)
+#### Lista technologii oraz narzędzi (_na dzień 25/11/2023_)
 
-Angular, TypeScript, RxJS TailwindCSS, Rest Api, Prettier
+Angular v17, TypeScript, RxJS TailwindCSS, Rest Api, Prettier
 
 ## Lista lekcji:
 
@@ -53,6 +53,9 @@ Kliknij w nazwę by przejść by zobaczyć zawartość lekcji
 | 6   | 19/10/2023      | [Angular Pipes](#6-angular-pipes)                                                                                                         | v16.2  |
 | 7   | 27/10/2023      | [Budujemy filtry z pomocą Reactive Forms!](#7-budujemy-filtry-z-pomocą-reactive-forms)                                                    | v16.2  |
 | 8   | 04/11/2023      | [Poznajemy RxJS](#8-poznajemy-rxjs)                                                                                                       | v16.2  |
+| 9   | 14/11/2023      | [HttpClient](#9-httpclient)                                                                                                               | v16.2  |
+| 10  | 18/11/2023      | [Podstawy Routingu](#10-podstawy-routingu-w-aplikacji)                                                                                    | v16.2  |
+| 11  | 25/11/2023      | [Nowy Control Flow oraz update do v17](#11-update-do-v17-oraz-nowe-control-flow)                                                          | v17    |
 
 ## Zawartość lekcji
 
@@ -202,6 +205,54 @@ Repozytorium: ✅
 - jak zarządzać subskrypcjami na strumienie danych
 - jak wykorzystać metodę ngOnDestroy
 - operatorów RxJS'a: startWith, debounceTime
+
+#### Zadania do wykonania
+
+-
+
+### 9. HttpClient
+
+#### [Link do lekcji](https://www.youtube.com/watch?v=E6CAdOjerJo)
+
+Opublikowano: ✅ (14/11/2023)
+
+Repozytorium: ✅
+
+#### Nauczysz się:
+
+-
+
+#### Zadania do wykonania
+
+-
+
+### 10. Podstawy routingu w aplikacji
+
+#### [Link do lekcji](https://www.youtube.com/watch?v=XYVPFlcGgcw)
+
+Opublikowano: ✅ (14/11/2023)
+
+Repozytorium: ✅
+
+#### Nauczysz się:
+
+-
+
+#### Zadania do wykonania
+
+-
+
+### 11. Update do v17 oraz nowe Control Flow
+
+#### [Link do lekcji](https://www.youtube.com/watch?v=sdQKxvg3lOs)
+
+Opublikowano: ✅ (25/11/2023)
+
+Repozytorium: ✅
+
+#### Nauczysz się:
+
+-
 
 #### Zadania do wykonania
 
