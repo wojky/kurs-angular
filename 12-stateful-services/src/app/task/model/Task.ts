@@ -3,4 +3,5 @@ export type Task = {
   done: boolean;
   name: string;
   createdAt: number;
+  urgent: number;
 };

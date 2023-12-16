@@ -3,7 +3,7 @@ import { TasksListFiltersFormValue } from "../ui/task-list-filters.component";
 import { GetAllTasksSearchParams } from "./tasks.service";
 
 export function getAllTasksSearchParams(
-  formValue: TasksListFiltersFormValue
+  formValue: TasksListFiltersFormValue & { urgent?: boolean },
 ): GetAllTasksSearchParams {
   let searchParams = {
     _sort: "createdAt",
@@ -15,8 +15,10 @@ export function getAllTasksSearchParams(
     searchParams.done_like = "false";
   } else if (formValue.status === TASK_STATUS.DONE) {
     searchParams.done_like = "true";
-  } else {
-    searchParams.done_like = "";
+  }
+
+  if (formValue.urgent) {
+    searchParams.urgent_like = "true";
   }
 
   return searchParams;

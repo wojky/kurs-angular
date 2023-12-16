@@ -11,12 +11,6 @@
       "createdAt": 1700291084476,
       "updatedAt": null,
       "id": 2
-    },
-    {
-      "name": "Test",
-      "createdAt": 1700914202823,
-      "updatedAt": null,
-      "id": 3
     }
   ],
   "tasks": [
@@ -34,7 +28,8 @@
       "name": "Learn components and more stuff",
       "done": false,
       "createdAt": 1693042949144,
-      "updatedAt": 1697883805423
+      "updatedAt": 1701512662476,
+      "urgent": true
     },
     {
       "createdAt": 1695467694663,
@@ -42,7 +37,8 @@
       "name": "Learn pipes",
       "done": true,
       "id": 3,
-      "updatedAt": 1697746460414
+      "updatedAt": 1697746460414,
+      "urgent": true
     },
     {
       "name": "Learn forms",
@@ -57,24 +53,27 @@
       "projectId": 1,
       "done": false,
       "createdAt": 1697281836095,
-      "updatedAt": 1697740424146,
-      "id": 5
+      "updatedAt": 1702732986260,
+      "id": 5,
+      "urgent": false
     },
     {
       "name": "Plank for 2 minutes 💪",
       "projectId": 1,
-      "done": true,
+      "done": false,
       "createdAt": 1697886596823,
-      "updatedAt": 1698775117093,
-      "id": 6
+      "updatedAt": 1702732739100,
+      "id": 6,
+      "urgent": true
     },
     {
       "name": "Buy flowers 💐",
       "projectId": null,
       "createdAt": 1700292845327,
-      "updatedAt": null,
+      "updatedAt": 1702732728142,
       "done": false,
-      "id": 7
+      "id": 7,
+      "urgent": true
     }
   ]
 }

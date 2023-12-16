@@ -1,16 +1,15 @@
 import { Injectable, inject } from "@angular/core";
 import { Task } from "../model/Task";
-import { ListFetchingError } from "../../utils/list-state.type";
-import { wait } from "../../utils/wait";
 import { HttpClient } from "@angular/common/http";
 
-export type TaskUpdatePayload = { done?: boolean; name?: string };
+export type TaskUpdatePayload = { done?: boolean; name?: string; urgent?: boolean };
 
 export type GetAllTasksSearchParams = {
   q: string;
   _sort: "createdAt";
   _order: "desc" | "asc";
   done_like: "true" | "false" | "";
+  urgent_like: "true" | "";
 };
 
 @Injectable({

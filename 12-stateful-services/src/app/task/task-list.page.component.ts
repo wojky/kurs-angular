@@ -9,11 +9,20 @@ import {
   TasksListFiltersFormValue,
 } from "./ui/task-list-filters.component";
 import { getAllTasksSearchParams } from "./data-access/tasks-filters.adapter";
+import { NgIconComponent, provideIcons } from "@ng-icons/core";
+import { featherColumns, featherList } from "@ng-icons/feather-icons";
+import { TasksKanbanViewComponent } from "./ui/tasks-kanban.component";
 
 @Component({
   selector: "app-task-list-page",
   standalone: true,
-  imports: [TasksListComponent, SubmitTextComponent, TasksListFiltersComponent],
+  imports: [
+    TasksListComponent,
+    SubmitTextComponent,
+    TasksListFiltersComponent,
+    NgIconComponent,
+    TasksKanbanViewComponent,
+  ],
   template: `
     <app-submit-text
       (submitText)="
@@ -22,9 +31,31 @@ import { getAllTasksSearchParams } from "./data-access/tasks-filters.adapter";
     />
     <app-tasks-list-filters (filtersChange)="handleFiltersChange($event)" />
 
+    <div class="flex gap-4 items-center my-4">
+      <span> View mode:</span>
+      <button
+        (click)="view = 'list'"
+        class="flex"
+        [class.text-green-500]="view === 'list'"
+      >
+        <ng-icon name="featherList" />
+      </button>
+      <button
+        (click)="view = 'kanban'"
+        class="flex"
+        [class.text-green-500]="view === 'kanban'"
+      >
+        <ng-icon name="featherColumns" />
+      </button>
+    </div>
+
     @switch (listState.state) {
       @case (listStateValue.SUCCESS) {
-        <app-tasks-list class="block mt-4" [tasks]="listState.results" />
+        @if (view === "list") {
+          <app-tasks-list class="block mt-4" [tasks]="listState.results" />
+        } @else {
+          <app-tasks-kanban-view [tasks]="listState.results" />
+        }
       }
       @case (listStateValue.ERROR) {
         <p>
@@ -36,9 +67,12 @@ import { getAllTasksSearchParams } from "./data-access/tasks-filters.adapter";
       }
     }
   `,
+  viewProviders: [provideIcons({ featherList, featherColumns })],
 })
 export class TaskListPageComponent {
   @Input() projectId?: string;
+  @Input() view?: "kanban" | "list";
+  @Input() urgent?: boolean;
 
   private tasksService = inject(TasksService);
 
@@ -46,11 +80,12 @@ export class TaskListPageComponent {
   listStateValue = LIST_STATE_VALUE;
 
   ngOnInit() {
-    // this.getAllTasks(getAllTasksSearchParams(this.form.getRawValue()));
+    this.view = this.view || "list";
+    this.urgent = this.urgent || false;
   }
 
   handleFiltersChange(filters: TasksListFiltersFormValue): void {
-    this.getAllTasks(getAllTasksSearchParams(filters));
+    this.getAllTasks(getAllTasksSearchParams({ ...filters, urgent: this.urgent }));
   }
 
   getAllTasks(searchParams: GetAllTasksSearchParams): void {
