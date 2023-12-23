@@ -1,4 +1,4 @@
-import { Component, Input, inject } from "@angular/core";
+import { Component, Input, computed, inject } from "@angular/core";
 import { TasksListComponent } from "./ui/tasks-list.component";
 import { Task } from "./model/Task";
 import { GetAllTasksSearchParams, TasksService } from "./data-access/tasks.service";
@@ -12,6 +12,7 @@ import { getAllTasksSearchParams } from "./data-access/tasks-filters.adapter";
 import { NgIconComponent, provideIcons } from "@ng-icons/core";
 import { featherColumns, featherList } from "@ng-icons/feather-icons";
 import { TasksKanbanViewComponent } from "./ui/tasks-kanban.component";
+import { AppConfigStateService } from "../config/config.state.service";
 
 @Component({
   selector: "app-task-list-page",
@@ -34,16 +35,16 @@ import { TasksKanbanViewComponent } from "./ui/tasks-kanban.component";
     <div class="flex gap-4 items-center my-4">
       <span> View mode:</span>
       <button
-        (click)="view = 'list'"
+        (click)="configStateService.updateTasksListView('list')"
         class="flex"
-        [class.text-green-500]="view === 'list'"
+        [class.text-green-500]="$view() === 'list'"
       >
         <ng-icon name="featherList" />
       </button>
       <button
-        (click)="view = 'kanban'"
+        (click)="configStateService.updateTasksListView('kanban')"
         class="flex"
-        [class.text-green-500]="view === 'kanban'"
+        [class.text-green-500]="$view() === 'kanban'"
       >
         <ng-icon name="featherColumns" />
       </button>
@@ -51,7 +52,7 @@ import { TasksKanbanViewComponent } from "./ui/tasks-kanban.component";
 
     @switch (listState.state) {
       @case (listStateValue.SUCCESS) {
-        @if (view === "list") {
+        @if ($view() === "list") {
           <app-tasks-list class="block mt-4" [tasks]="listState.results" />
         } @else {
           <app-tasks-kanban-view [tasks]="listState.results" />
@@ -76,11 +77,18 @@ export class TaskListPageComponent {
 
   private tasksService = inject(TasksService);
 
+  configStateService = inject(AppConfigStateService);
+
+  $view = computed(() => this.configStateService.$value().tasksListView);
+
   listState: ComponentListState<Task> = { state: LIST_STATE_VALUE.IDLE };
   listStateValue = LIST_STATE_VALUE;
 
   ngOnInit() {
-    this.view = this.view || "list";
+    if (this.view) {
+      this.configStateService.updateTasksListView(this.view);
+    }
+
     this.urgent = this.urgent || false;
   }
 
