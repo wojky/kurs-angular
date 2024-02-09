@@ -1,6 +1,8 @@
 import { Injectable, inject } from "@angular/core";
 import { Task } from "../model/Task";
 import { HttpClient } from "@angular/common/http";
+import { tap } from "rxjs";
+import { TasksStateService } from "./tasks.state.service";
 
 export type TaskUpdatePayload = { done?: boolean; name?: string; urgent?: boolean };
 
@@ -19,12 +21,21 @@ export class TasksService {
   private URL = "http://localhost:3000";
 
   private http = inject(HttpClient);
+  private state = inject(TasksStateService);
 
   getAll(searchParams?: GetAllTasksSearchParams) {
-    return this.http.get<Task[]>(`${this.URL}/tasks`, {
-      observe: "response",
-      params: searchParams,
-    });
+    return this.http
+      .get<Task[]>(`${this.URL}/tasks`, {
+        observe: "response",
+        params: searchParams,
+      })
+      .pipe(
+        tap((response) => {
+          if (response.body) {
+            this.state.addTasks(response.body);
+          }
+        }),
+      );
   }
 
   getAllByProjectId(projectId: string, searchParams: GetAllTasksSearchParams) {
@@ -39,7 +50,11 @@ export class TasksService {
   }
 
   update(taskId: number, payload: TaskUpdatePayload) {
-    return this.http.patch<Task>(`${this.URL}/tasks/${taskId}`, payload);
+    return this.http.patch<Task>(`${this.URL}/tasks/${taskId}`, payload).pipe(
+      tap((response) => {
+        this.state.updateTask(response);
+      }),
+    );
   }
 
   add(name: string) {

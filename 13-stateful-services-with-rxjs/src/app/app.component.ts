@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { TaskListPageComponent } from "./task/task-list.page.component";
 import { ProjectListPageComponent } from "./project/project-list.page.component";
 import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
+import { TasksStateService } from "./task/data-access/tasks.state.service";
 
 @Component({
   selector: "app-root",
@@ -37,7 +38,9 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
         </li>
         <li><a routerLink="/projects" routerLinkActive="font-bold">Projects (0)</a></li>
         <li class="ml-auto">
-          <a routerLink="/tasks/urgent" routerLinkActive="font-bold">Urgent (0)</a>
+          <a routerLink="/tasks/urgent" routerLinkActive="font-bold"
+            >Urgent ({{ urgentCount }})</a
+          >
         </li>
       </ul>
     </nav>
@@ -46,4 +49,14 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
     </main>
   `,
 })
-export class AppComponent {}
+export class AppComponent {
+  tasksStateService = inject(TasksStateService);
+
+  urgentCount = 0;
+
+  ngOnInit() {
+    this.tasksStateService.value$.subscribe((state) => {
+      this.urgentCount = state.urgentCount;
+    });
+  }
+}
