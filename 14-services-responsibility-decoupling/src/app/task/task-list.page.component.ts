@@ -1,7 +1,6 @@
 import { Component, Input, computed, inject } from "@angular/core";
 import { TasksListComponent } from "./ui/tasks-list.component";
 import { Task } from "./model/Task";
-import { GetAllTasksSearchParams, TasksService } from "./data-access/tasks.service";
 import { ComponentListState, LIST_STATE_VALUE } from "../utils/list-state.type";
 import { SubmitTextComponent } from "@ui/submit-text.component";
 import {
@@ -13,6 +12,8 @@ import { NgIconComponent } from "@ng-icons/core";
 import { TasksKanbanViewComponent } from "./ui/tasks-kanban.component";
 import { AppConfigStateService } from "../config/config.state.service";
 import { TasksListViewModeComponent } from "./ui/tasks-list-view-mode.component";
+import { TasksService } from "./data-access/tasks.service";
+import { GetAllTasksSearchParams } from "./data-access/tasks.api.service";
 
 @Component({
   selector: "app-task-list-page",

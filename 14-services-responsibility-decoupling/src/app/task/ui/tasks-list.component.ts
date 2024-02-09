@@ -2,10 +2,11 @@ import { Component, Input, inject } from "@angular/core";
 import { Task } from "../model/Task";
 import { NgIconComponent, provideIcons } from "@ng-icons/core";
 import { featherCalendar } from "@ng-icons/feather-icons";
-import { TaskUpdatePayload, TasksService } from "../data-access/tasks.service";
 import { AutosizeTextareaComponent } from "@ui/autosize-textarea.component";
 import { RemoveItemButtonComponent } from "@ui/remove-item-button.component";
 import { TaskCardComponent } from "./task-card.component";
+import { TaskUpdatePayload } from "../data-access/tasks.api.service";
+import { TasksService } from "../data-access/tasks.service";
 
 @Component({
   selector: "app-tasks-list",

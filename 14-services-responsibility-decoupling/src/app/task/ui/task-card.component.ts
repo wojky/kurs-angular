@@ -3,9 +3,9 @@ import { Task } from "../model/Task";
 import { RemoveItemButtonComponent } from "@ui/remove-item-button.component";
 import { AutosizeTextareaComponent } from "@ui/autosize-textarea.component";
 import { NgIconComponent, provideIcons } from "@ng-icons/core";
-import { TaskUpdatePayload } from "../data-access/tasks.service";
 import { CustomDatePipe } from "src/app/utils/pipes/custom-date.pipe";
 import { bootstrapBookmark, bootstrapBookmarkFill } from "@ng-icons/bootstrap-icons";
+import { TaskUpdatePayload } from "../data-access/tasks.api.service";
 
 @Component({
   selector: "app-task-card",
