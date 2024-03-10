@@ -1,0 +1,80 @@
+{
+  "projects": [
+    {
+      "name": "Daily routines",
+      "createdAt": 1700290861039,
+      "updatedAt": null,
+      "id": 1
+    },
+    {
+      "name": "Programming",
+      "createdAt": 1700291084476,
+      "updatedAt": null,
+      "id": 2
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "projectId": 2,
+      "name": "Angular v16 !!!",
+      "done": false,
+      "createdAt": 1693042928127,
+      "updatedAt": 1697740416385
+    },
+    {
+      "id": 2,
+      "projectId": 2,
+      "name": "Learn components and more stuff",
+      "done": false,
+      "createdAt": 1693042949144,
+      "updatedAt": 1701512662476,
+      "urgent": true
+    },
+    {
+      "createdAt": 1695467694663,
+      "projectId": 2,
+      "name": "Learn pipes",
+      "done": true,
+      "id": 3,
+      "updatedAt": 1697746460414,
+      "urgent": true
+    },
+    {
+      "name": "Learn forms",
+      "projectId": 2,
+      "done": false,
+      "createdAt": 1697281707175,
+      "id": 4,
+      "updatedAt": 1707499600671,
+      "urgent": false
+    },
+    {
+      "name": "Feed your dog",
+      "projectId": 1,
+      "done": false,
+      "createdAt": 1697281836095,
+      "updatedAt": 1707499584469,
+      "id": 5,
+      "urgent": false
+    },
+    {
+      "name": "Plank for 2 minutes 💪",
+      "projectId": 1,
+      "done": false,
+      "createdAt": 1697886596823,
+      "updatedAt": 1702732739100,
+      "id": 6,
+      "urgent": true
+    },
+    {
+      "name": "Buy flowers 💐",
+      "projectId": null,
+      "createdAt": 1700292845327,
+      "updatedAt": 1702732728142,
+      "done": false,
+      "id": 7,
+      "urgent": true
+    }
+  ]
+}
