@@ -1,6 +1,10 @@
 import { Component, inject } from "@angular/core";
 import { Project } from "./model/Project";
+<<<<<<< HEAD
 import { ListState, LIST_STATE_VALUE } from "../utils/list-state.type";
+=======
+import { ComponentListState, LIST_STATE_VALUE } from "../utils/list-state.type";
+>>>>>>> b6c31f86e8c758ce896fb9aaba471cdbf1af0f2a
 import { SubmitTextComponent } from "@ui/submit-text.component";
 import { ProjectsApiService } from "./data-access/projects.api.service";
 import { RouterLink } from "@angular/router";
@@ -41,7 +45,11 @@ import { RouterLink } from "@angular/router";
 export class ProjectListPageComponent {
   private projectsApiService = inject(ProjectsApiService);
 
+<<<<<<< HEAD
   listState: ListState<Project> = { state: LIST_STATE_VALUE.IDLE };
+=======
+  listState: ComponentListState<Project> = { state: LIST_STATE_VALUE.IDLE };
+>>>>>>> b6c31f86e8c758ce896fb9aaba471cdbf1af0f2a
   listStateValue = LIST_STATE_VALUE;
 
   ngOnInit() {
